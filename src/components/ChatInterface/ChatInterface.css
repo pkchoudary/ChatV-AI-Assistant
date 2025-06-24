@@ -1,0 +1,48 @@
+.chat-interface {
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-open .chat-interface {
+  margin-left: 280px;
+}
+
+.chat-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.input-area {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* Dark mode styles */
+.dark .chat-interface {
+  background: #0f172a;
+  color: white;
+}
+
+.dark .chat-header,
+.dark .input-area {
+  border-color: #334155;
+}
