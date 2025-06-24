@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# ChatV AI Assistant 🤖✨
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![ChatV Demo](https://via.placeholder.com/1200x600.png?text=ChatV+Demo+GIF+Here)  
+*(Replace with actual screenshot/GIF showing the interface in both light/dark modes)*
 
-## Available Scripts
+A full-featured AI chat interface supporting multiple LLM models (GPT-4, Mistral, LLaMA 3, Gemma) with local Ollama integration. Built with React and developed with AI assistance.
 
-In the project directory, you can run:
+🔗 **Live Demo**: [Deploy on Vercel]() | 📹 [Video Walkthrough]()  
+*(Add links when ready)*
 
-### `npm start`
+## 🌟 Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Core Functionality
+- 🧠 **Multi-model support**: Switch between different AI models
+- 💾 **Session management**: Save, load, and delete chat sessions
+- ✏️ **Message editing**: Double-click to modify sent messages
+- 📥 **Import/Export**: Save chats as JSON files
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### UI/UX
+- 🌗 **Dark/Light mode**: Automatic system preference detection
+- ⌨️ **Keyboard shortcuts**:
+  - `Ctrl+N` → New chat
+  - `Ctrl+K` → Clear session  
+  - `Ctrl+E` → Export chat
+  - `Ctrl+B` → Toggle sidebar
+- ⚡ **Streaming simulation**: Typewriter-style message display
 
-### `npm test`
+### Technical
+- 🔌 **Local API integration**: Connect to Ollama at `http://localhost:11434/api/chat`
+- 📱 **Responsive design**: Works on desktop/tablet (mobile WIP)
+- 🛡️ **Error handling**: Graceful API failure recovery
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech Stack
 
-### `npm run build`
+**Frontend**  
+| Technology | Use Case |
+|------------|----------|
+| React 18 | Core framework |
+| Vite | Build tool |
+| Tailwind CSS | Styling |
+| Axios | HTTP requests |
+| React Icons | UI icons |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Development**  
+- ESLint + Prettier → Code quality
+- Git → Version control
+- VS Code → IDE
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Node.js v18+
+- Ollama running locally
+- Git
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Clone the repository
+git clone https://github.com/pkchoudary/ChatV-AI-Assistant.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Navigate to project directory
+cd ChatV-AI-Assistant
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Install dependencies
+npm install
+Running Locally
+bash
+# Start development server
+npm run dev
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Build for production
+npm run build
+⚙️ Configuration
+Edit src/config.js to customize:
 
-## Learn More
+javascript
+{
+  DEFAULT_MODEL: "llama3", // Change default model
+  API_ENDPOINT: "http://localhost:11434/api/chat", // API base URL
+  ENABLE_STREAMING: true, // Toggle streaming simulation
+  DEFAULT_THEME: "system" // "light" | "dark" | "system"
+}
+📂 Project Structure
+text
+chatv-ai-assistant/
+├── public/            # Static assets
+├── src/
+│   ├── components/    # Reusable components
+│   │   ├── ChatInterface/
+│   │   ├── Sidebar/
+│   │   └── ... 
+│   ├── hooks/         # Custom hooks
+│   ├── utils/         # Helper functions
+│   ├── App.jsx        # Main component
+│   └── main.jsx       # Entry point
+├── .gitignore
+├── package.json
+└── README.md
+🤝 AI Assistance Acknowledgement
+This project was developed with assistance from:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ChatGPT (Code structure optimization)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Claude (UI/UX suggestions)
 
-### Code Splitting
+DeepSeek (Debugging help)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+While AI tools provided suggestions, all architectural decisions and final implementations were made by the developer.
 
-### Analyzing the Bundle Size
+🐛 Known Issues
+Mobile responsiveness needs improvement
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Session list sometimes doesn't update immediately
 
-### Making a Progressive Web App
+Dark mode toggle animation could be smoother
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🛠️ Troubleshooting
+ESLint Warnings
+To temporarily disable during development:
 
-### Advanced Configuration
+bash
+# Create .env file
+echo "DISABLE_ESLINT_PLUGIN=true" > .env
+API Connection Failed
+Ensure Ollama is running:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+bash
+ollama serve
+📜 License
+MIT License - See LICENSE for full text.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👨‍💻 Author
+Pavan Kumar Choudary
